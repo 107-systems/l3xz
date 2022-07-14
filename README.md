@@ -39,6 +39,8 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz-hw](https://github.com/107-systems/l3xz-hw): L3X-Z Hexapod hardware design files (3D model, printed parts, etc.).
 * [l3xz-hw_leg-controller](https://github.com/107-systems/l3xz-hw_leg-controller): L3X-Z Hexapod leg controller hardware design files.
 ##### Firmware
-* [l3xz-fw_aux-controller](https://github.com/107-systems/l3xz-fw_aux-controller): L3X-Z hexapod auxiliary controller firmware. |
-* [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller): L3X-Z hexapod leg controller firmware. |
+* [l3xz-fw_aux-controller](https://github.com/107-systems/l3xz-fw_aux-controller): L3X-Z hexapod auxiliary controller firmware.
+* [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller): L3X-Z hexapod leg controller firmware.
 * [l3xz-fw_radiation_sensor](https://github.com/107-systems/l3xz-fw_radiation_sensor): L3X-Z hexapod firmware for the radiation sensor.
+##### Dependencies
+* [orocos-kdl](https://github.com/107-systems/orocos-kdl-debian): Prebuilt Debian package for `aarch64-linux-gnu` and `arm-linux-gnueabihf`.
