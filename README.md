@@ -11,6 +11,7 @@ Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
 
 #### Articles
 * A. Entinger (2022, June 8). [L3X-Z - A OpenCyphal enabled hexapod robot for ELROB 2022](https://forum.opencyphal.org/t/l3x-z-a-opencyphal-enabled-hexapod-robot-for-elrob-2022/).
+* R Kim (2022, June 17). [LXRobotics - L3XZ Hexapod Robot for ELROB 2022](https://community.robotis.us/t/lxrobotics-l3xz-hexapod-robot-for-elrob-2022).
 
 #### How-to-build
 ```bash
