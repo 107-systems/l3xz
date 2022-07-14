@@ -6,7 +6,7 @@ L3X-Z
 Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
 
 <p align="center">
-  <a href="https://github.com/107-systems/l3xz"><img src="https://raw.githubusercontent.com/107-systems/l3xz_io/main/doc/img/2022-05-31-ELROB-2022-L3X-Z.jpg" width="40%"></a>
+  <a href="https://107-systems.org/elrob-2022/2022-05-31-ELROB-2022-Alex-02-compressed.mp4"><img src="https://raw.githubusercontent.com/107-systems/l3xz_io/main/doc/img/2022-05-31-ELROB-2022-L3X-Z.jpg" width="40%"></a>
 </p>
 
 #### Articles
