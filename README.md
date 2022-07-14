@@ -4,7 +4,6 @@ L3X-Z
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Spell Check status](https://github.com/107-systems/l3xz/actions/workflows/spell-check.yml/badge.svg)](https://github.com/107-systems/l3xz/actions/workflows/spell-check.yml)
 
-
 Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
 
 <p align="center">
@@ -28,3 +27,16 @@ Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
 | [l3xz-fw_aux-controller](https://github.com/107-systems/l3xz-fw_aux-controller) | L3X-Z hexapod auxiliary controller firmware. |
 | [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller) | L3X-Z hexapod leg controller firmware. |
 | [l3xz-fw_radiation_sensor](https://github.com/107-systems/l3xz-fw_radiation_sensor) | L3X-Z hexapod firmware for the radiation sensor.
+
+#### How-to-build
+```bash
+colcon_ws/src$ git clone https://github.com/107-systems/l3xz
+colcon_ws$ source /opt/ros/galactic/setup.bash
+colcon_ws$ colcon build --packages-select l3xz
+```
+
+#### How-to-run
+```bash
+colcon_ws$ source install/setup.bash
+colcon_ws$ ros2 launch l3xz control.py
+```
