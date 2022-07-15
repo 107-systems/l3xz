@@ -28,11 +28,11 @@ colcon_ws$ ros2 launch l3xz control.py
 
 #### Repositories
 ##### Host Software
-* [l3xz_io](https://github.com/107-systems/l3xz_io): ROS based control software for L3X-Z, a mixed electric/hydraulic hexapod.
 * [l3xz_joy](https://github.com/107-systems/l3xz_joy): ROS PS3 joystick driver for feeding `l3xz_teleop` node.
 * [l3xz_teleop](https://github.com/107-systems/l3xz_teleop): Teleoperation for L3X-Z via PS3 joystick and ROS topics.
 * [l3xz-mapping](https://github.com/107-systems/l3xz-mapping): Docker container containing the mapping stack for L3X-Z.
 ##### Robot Software
+* [l3xz_io](https://github.com/107-systems/l3xz_io): ROS based control software for L3X-Z, a mixed electric/hydraulic hexapod.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3XZ electric/hydraulic hexapod robot.
 * [l3xz_sweep_scanner](https://github.com/107-systems/l3xz_sweep_scanner): ROS driver for Scanse Sweep 360° 2D LIDAR.
 * [l3xz_openmv_camera](https://github.com/107-systems/l3xz_openmv_camera): ROS driver for OpenMV camera.
