@@ -41,7 +41,7 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz-hw](https://github.com/107-systems/l3xz-hw): L3X-Z Hexapod hardware design files (3D model, printed parts, etc.).
 * [l3xz-hw_leg-controller](https://github.com/107-systems/l3xz-hw_leg-controller): L3X-Z Hexapod leg controller hardware design files.
 * [l3xz-hw_power_distribution_block](https://github.com/107-systems/l3xz-hw_power_distribution_block): Power distribution block for the L3X-Z hexapod robot.
-
+* [l3xz-hw_can_power_injector](https://github.com/107-systems/l3xz-hw_can_power_injector): Provide power via CAN to all L3X-Z CAN devices.
 ##### Firmware
 * [l3xz-fw_aux-controller](https://github.com/107-systems/l3xz-fw_aux-controller): L3X-Z hexapod auxiliary controller firmware.
 * [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller): L3X-Z hexapod leg controller firmware.
