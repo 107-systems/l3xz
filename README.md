@@ -21,6 +21,13 @@ colcon_ws$ colcon build --packages-select l3xz
 ```
 
 #### How-to-run
+**L3X-Z Hexapod Robot**
+```bash
+colcon_ws$ source install/setup.bash
+colcon_ws$ ros2 launch l3xz robot.py
+```
+
+**Control Station**
 ```bash
 colcon_ws$ source install/setup.bash
 colcon_ws$ ros2 launch l3xz control.py
