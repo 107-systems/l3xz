@@ -28,9 +28,39 @@ def generate_launch_description():
       output='screen',
       parameters=[]
     )
+    
+    l3xz_openmv_rgb = Node(
+      package='l3xz_openmv_camera',
+      executable='l3xz_openmv_camera',
+      name='l3xz_openmv_rgb',
+      namespace='l3xz',
+      output='screen',
+      parameters=[
+          {'image_topic': 'image_rgb'},
+          {'info_topic': 'info_rgb'},
+          {'port': '/dev/ttyUSB0'},
+          {'frame_id': 'openmv_rgb_link'},
+      ]
+    )
 
+   l3xz_openmv_thermal = Node(
+      package='l3xz_openmv_camera',
+      executable='l3xz_openmv_camera',
+      name='l3xz_openmv_thermal',
+      namespace='l3xz',
+      output='screen',
+      parameters=[
+          {'image_topic': 'image_thermal'},
+          {'info_topic': 'info_rgb'},
+          {'port': '/dev/ttyUSB1'},
+          {'frame_id': 'openmv_thermal_link'},
+      ]
+    )
+        
     return LaunchDescription([
         l3xz_io,
         l3xz_head_ctrl,
         l3xz_gait_ctrl,
+        l3xz_openmv_rgb,
+        l3xz_openmv_thermal
     ])
