@@ -38,7 +38,7 @@ def generate_launch_description():
       parameters=[
           {'image_topic': 'image_rgb'},
           {'info_topic': 'info_rgb'},
-          {'port': '/dev/ttyUSB0'},
+          {'port': '/dev/serial/by-id/usb-OpenMV_OpenMV_Virtual_Comm_Port_in_FS_Mode_387C357D3330-if00'},
           {'frame_id': 'openmv_rgb_link'},
       ]
     )
@@ -52,7 +52,7 @@ def generate_launch_description():
       parameters=[
           {'image_topic': 'image_thermal'},
           {'info_topic': 'info_rgb'},
-          {'port': '/dev/ttyUSB1'},
+          {'port': '/dev/serial/by-id/usb-OpenMV_OpenMV_Virtual_Comm_Port_in_FS_Mode_3172326E3330-if00'},
           {'frame_id': 'openmv_thermal_link'},
       ]
     )
