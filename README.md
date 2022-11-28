@@ -43,7 +43,7 @@ colcon_ws$ ros2 launch l3xz control.py
 ##### Host Software
 * [l3xz_joy](https://github.com/107-systems/l3xz_joy): ROS PS3 joystick driver for feeding `l3xz_teleop` node.
 * [l3xz_teleop](https://github.com/107-systems/l3xz_teleop): Teleoperation for L3X-Z via PS3 joystick and ROS topics.
-* [l3xz-mapping](https://github.com/107-systems/l3xz-mapping): Docker container containing the mapping stack for L3X-Z.
+* [l3xz_mapping](https://github.com/107-systems/l3xz_mapping): L3X-Z mapping stack.
 * [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
 ##### Robot Software
 * [l3xz_io](https://github.com/107-systems/l3xz_io): ROS based control software for L3X-Z, a mixed electric/hydraulic hexapod.
