@@ -60,7 +60,7 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz-hw-pan-tilt-head](https://github.com/107-systems/l3xz-hw-pan-tilt-head): Design files for L3X-Zs pan/tilt color/thermal camera head.
 
 ##### Firmware
-* [l3xz-fw_aux-controller](https://github.com/107-systems/l3xz-fw_aux-controller): L3X-Z hexapod auxiliary controller firmware.
+* [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller which is based on the [OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase) board.
 * [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller): L3X-Z hexapod leg controller firmware.
 * [l3xz-fw_radiation_sensor](https://github.com/107-systems/l3xz-fw_radiation_sensor): L3X-Z hexapod firmware for the radiation sensor.
 ##### Dependencies
