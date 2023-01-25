@@ -53,7 +53,7 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz_openmv_camera](https://github.com/107-systems/l3xz_openmv_camera): ROS driver for OpenMV camera.
 ##### Hardware
 * [l3xz-hw](https://github.com/107-systems/l3xz-hw): L3X-Z Hexapod hardware design files (3D model, printed parts, etc.).
-* [l3xz-hw_leg-controller](https://github.com/107-systems/l3xz-hw_leg-controller): L3X-Z Hexapod leg controller hardware design files.
+* [l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware): L3X-Z Hexapod leg controller hardware design files.
 * [l3xz-hw_power_distribution_block](https://github.com/107-systems/l3xz-hw_power_distribution_block): Power distribution block for the L3X-Z hexapod robot.
 * [l3xz-hw-rs485-power-injector](https://github.com/107-systems/l3xz-hw-rs485-power-injector): Provide battery power to RS485 devices.
 * [l3xz-hw-pan-tilt-head](https://github.com/107-systems/l3xz-hw-pan-tilt-head): Design files for L3X-Zs pan/tilt color/thermal camera head.
@@ -61,7 +61,7 @@ colcon_ws$ ros2 launch l3xz control.py
 
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
-* [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-hw_leg-controller](https://github.com/107-systems/l3xz-hw_leg-controller)).
+* [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware)).
 * [l3xz-fw_radiation_sensor](https://github.com/107-systems/l3xz-fw_radiation_sensor): L3X-Z hexapod firmware for the radiation sensor.
 ##### Dependencies
 * [libdynamixelplusplus](https://github.com/107-systems/libdynamixelplusplus): C++17 wrapper for the Robotis Dynamixel servo protocol.
