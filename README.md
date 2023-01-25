@@ -61,7 +61,7 @@ colcon_ws$ ros2 launch l3xz control.py
 
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
-* [l3xz-fw_leg-controller](https://github.com/107-systems/l3xz-fw_leg-controller): L3X-Z hexapod leg controller firmware.
+* [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-hw_leg-controller](https://github.com/107-systems/l3xz-hw_leg-controller)).
 * [l3xz-fw_radiation_sensor](https://github.com/107-systems/l3xz-fw_radiation_sensor): L3X-Z hexapod firmware for the radiation sensor.
 ##### Dependencies
 * [libdynamixelplusplus](https://github.com/107-systems/libdynamixelplusplus): C++17 wrapper for the Robotis Dynamixel servo protocol.
