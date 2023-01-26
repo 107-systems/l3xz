@@ -65,3 +65,45 @@ colcon_ws$ ros2 launch l3xz control.py
 ##### Dependencies
 * [libdynamixelplusplus](https://github.com/107-systems/libdynamixelplusplus): C++17 wrapper for the Robotis Dynamixel servo protocol.
 * [orocos-kdl](https://github.com/107-systems/orocos-kdl-debian): Prebuilt Debian package for `aarch64-linux-gnu` and `arm-linux-gnueabihf`.
+
+### Configuration
+#### Network Configuration
+| Component | IP | Notes |
+|-|:-:|-|
+| MikroTik "Base Station" | 192.168.88.2 (Bridge-IP) | (station bridge, nv2, pre-shared-key, l...) |
+| MikroTik "Robot" | 192.168.88.1 (Bridge-IP) | (bridge, nv2, pre-shared-key, l...) |
+| Robot Rasperry Pi (Ethernet) | 192.168.88.5 | |
+| Control PC (Ethernet) | 192.168.88.3 | |
+
+#### Cyphal Configuration
+| Cyphal Node | ID |
+|-|:-:|
+| [Leg Controller](https://github.com/107-systems/l3xz-leg-ctrl-firmware) | 1-6 |
+| [Auxiliary Controller](https://github.com/107-systems/l3xz-aux-ctrl-firmware) | 20 |
+| [Radiation Sensor](https://github.com/107-systems/l3xz-radiation-sensor-firmware) | 21 |
+| [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf) | 10 |
+
+
+### Components
+#### Actuators
+- 6 x [Dynamixel MX-28AR](https://emanual.robotis.com/docs/en/dxl/mx/mx-28-2/) servo (RS485, for hip (coxa) rotation)
+- 12 x [Leimbach 0H1650A Hydraulic Zylinder](http://leimbach-modellbau.de/Produkte/Hydraulik/Zylinder/0H16xxxA/) (femur and tibia)
+- 1 x [Lynxmotion SSC-32](http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx): servo controller for hydraulic valves.
+- 12 x [Leimbach 0H1650A Hydraulic Zylinder](http://leimbach-modellbau.de/Produkte/Hydraulik/Zylinder/0H16xxxA/) (femur and tibia)
+- 2 x [Leimbach 0H506A Standard Hydraulik-Ventile 6-fach](http://leimbach-modellbau.de/Produkte/Hydraulik/Ventile/0H50x/) 
+- 12 x [Leimbach 0H518F Servo FUTABA s3107 ( für Steuerventil )](http://leimbach-modellbau.de/Produkte/Elektronik/0H518F/) 
+- 1 x [Leimbach 0H108A Doppelpumpeneinheit M4](http://leimbach-modellbau.de/Produkte/Hydraulik/Pumpen/0H108(A)/) 
+
+#### Sensors
+  - 1 x [OpenMV Cam H7 R2](https://openmv.io/collections/cams/products/openmv-cam-h7-r2): Vision
+  - 1 x [OpenMV Cam H7 R2](https://openmv.io/collections/cams/products/openmv-cam-h7-r2) + [FLIR Lepton Adapter Module](https://openmv.io/collections/cams/products/flir-lepton-adapter-module) + [FLIR Lepton](https://store.groupgets.com/products/flir-lepton-3-5): Thermal Vision
+  - 1 x [Scanse Sweep](https://github.com/scanse/sweep-sdk): 360 ° LIDAR (SLAM/Mapping)
+  - 12 x [AS5048A](https://ams.com/en/as5048a): 14-Bit rotary angle sensor for detecting position of femur/tibia
+  - radiation sensor
+  - 6 x [LAS4GQH-11/S](https://www.conrad.de/de/p/tru-components-las4gqh-11-s-drucktaster-220-v-dc-0-50-a-1-x-aus-ein-tastend-1-st-1661900.html): mechanical bumper switch at the foot endpoint to determine if the leg has ground contact
+  - 1 x [Zubax Babel](https://zubax.com/products/babel): USB to CAN adapter, for UAVCAN communication
+  - 1 x [KVH C-100](https://www.kvh.com/admin/products/compasses/compass-systems/c100-compass-engine) compass unit
+  - 1 x [Intel Realsense](https://www.intelrealsense.com/depth-camera-d435i) D435i
+
+#### Networking
+  - 2 x MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn)
