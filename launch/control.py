@@ -1,38 +1,16 @@
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch_ros.actions import Node
-from ament_index_python import get_package_share_directory
-
-import os
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
-    l3xz_joy = Node(
-      package='l3xz_joy',
-      executable='l3xz_joy_node',
-      name='joy',
-      namespace='l3xz',
-      output='screen',
-      parameters=[
-        {'joy_dev_node': '/dev/input/js0'},
-        {'joy_topic': 'joy'},
-        {'joy_topic_publish_period_ms': 50},
-        { 'joy_deadzone': 0.01 },
-      ]
-    )
+    l3xz_joy_launch_dir = get_package_share_directory('l3xz_joy') + '/launch/joy.py'
+    l3xz_joy = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_joy_launch_dir))
 
-    l3xz_teleop = Node(
-      package='l3xz_teleop',
-      executable='l3xz_teleop_node',
-      name='teleop_node',
-      namespace='l3xz',
-      output='screen',
-      parameters=[
-          {'joy_topic': 'joy'},
-          {'robot_topic': 'cmd_vel_robot'},
-          {'head_topic': 'cmd_vel_head'},
-      ]
-    )
+    l3xz_teleop_launch_dir = get_package_share_directory('l3xz_teleop')  + '/launch/teleop.py'
+    l3xz_teleop = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_teleop_launch_dir))
 
     return LaunchDescription([
         l3xz_joy,
-        l3xz_teleop,
+        l3xz_teleop
     ])
