@@ -45,7 +45,7 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz_mapping](https://github.com/107-systems/l3xz_mapping): L3X-Z mapping stack.
 * [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
 ##### Robot Software
-* [l3xz_io](https://github.com/107-systems/l3xz_io): ROS based control software for L3X-Z, a mixed electric/hydraulic hexapod.
+* [l3xz_ros_cyphal_bridge](https://github.com/107-systems/l3xz_ros_cyphal_bridge): Interface between [ROS](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s [Cyphal](https://opencyphal.org) connected components.
 * [l3xz_io_dynamixel](https://github.com/107-systems/l3xz_io_dynamixel): L3X-Z IO code for communicating with its Dynamixel servos vis RS485.
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
