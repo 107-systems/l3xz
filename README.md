@@ -57,7 +57,7 @@ colcon_ws$ ros2 launch l3xz control.py
 * [l3xz-radiation-sensor-firmware](https://github.com/107-systems/l3xz-radiation-sensor-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) radiation sensor ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 ##### Hardware
 * [l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware): L3X-Z Hexapod leg controller hardware design files.
-* [l3xz-hw-rs485-power-injector](https://github.com/107-systems/l3xz-hw-rs485-power-injector): Provide battery power to RS485 devices.
+* [RS485-Power-Injector](https://github.com/107-systems/RS485-Power-Injector): Provide battery power to RS485 devices.
 * [CAN-Power-Injector](https://github.com/107-systems/CAN-Power-Injector): Provide power via CAN to all L3X-Z CAN devices.
 ##### CAD
 * [l3xz-cad](https://github.com/107-systems/l3xz-cad): L3X-Z Hexapod hardware design files (3D model, printed parts, etc.).
