@@ -20,22 +20,26 @@ Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
 
 #### How-to-build
 ```bash
-colcon_ws/src$ git clone https://github.com/107-systems/l3xz
-colcon_ws$ source /opt/ros/humble/setup.bash
-colcon_ws$ colcon build --packages-select l3xz
+cd $COLCON_WS/src
+git clone https://github.com/107-systems/l3xz
+cd $COLCON_WS
+source /opt/ros/humble/setup.bash
+colcon build --packages-select l3xz
 ```
 
 #### How-to-run
 **L3X-Z Hexapod Robot**
 ```bash
-colcon_ws$ source install/setup.bash
-colcon_ws$ ros2 launch l3xz robot.py
+cd $COLCON_WS
+source install/setup.bash
+ros2 launch l3xz robot.py
 ```
 
 **Control Station**
 ```bash
-colcon_ws$ source install/setup.bash
-colcon_ws$ ros2 launch l3xz control.py
+cd $COLCON_WS
+source install/setup.bash
+ros2 launch l3xz control.py
 ```
 
 #### Repositories
