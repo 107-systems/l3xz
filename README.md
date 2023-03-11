@@ -31,14 +31,14 @@ colcon build --packages-select l3xz
 **L3X-Z Hexapod Robot**
 ```bash
 cd $COLCON_WS
-source install/setup.bash
+. install/setup.bash
 ros2 launch l3xz robot.py
 ```
 
 **Control Station**
 ```bash
 cd $COLCON_WS
-source install/setup.bash
+. install/setup.bash
 ros2 launch l3xz control.py
 ```
 
