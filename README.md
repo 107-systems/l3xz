@@ -3,7 +3,11 @@ L3X-Z
 =====
 [![Spell Check status](https://github.com/107-systems/l3xz/actions/workflows/spell-check.yml/badge.svg)](https://github.com/107-systems/l3xz/actions/workflows/spell-check.yml)
 
-Home of L3X-Z, a mixed electric/hydraulic hexapod robot.
+This is the digital home of **L3X-Z** ([*lɛɡz*](https://en.wiktionary.org/wiki/legs)), a mixed **electric/hydraulic hexapod robot**.
+
+All software components are built to leverage [ROS2 Humble Hawksbill](https://docs.ros.org/en/foxy/Releases.html).
+
+All real-time intravehicular communication is provided via [Cpyhal](https://opencyphal.org/) / [CAN](https://en.wikipedia.org/wiki/CAN_bus) using [107-Arduino-Cyphal](https://github.com/107-systems/107-Arduino-Cyphal).
 
 <p align="center">
   <a href="https://github.com/107-systems/l3xz"><img src="https://raw.githubusercontent.com/107-systems/.github/main/logo/l3xz-logo-memento-mori-github.png" width="40%"></a>
