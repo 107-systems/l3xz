@@ -55,6 +55,8 @@ ros2 launch l3xz control.py
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_sweep_scanner](https://github.com/107-systems/l3xz_sweep_scanner): ROS driver for Scanse Sweep 360° 2D LIDAR.
 * [l3xz_openmv_camera](https://github.com/107-systems/l3xz_openmv_camera): ROS driver for OpenMV camera.
+##### Packaged Robot Software
+* [l3xz_sw_pan_tilt_head](https://github.com/107-systems/l3xz_sw_pan_tilt_head): Software bundle for deployment on the Raspberry Pi Zero 2 of the [L3X-Z pan/tilt head](https://github.com/107-systems/l3xz-hw-pan-tilt-head).
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 * [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware)).
