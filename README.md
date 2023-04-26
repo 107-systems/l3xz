@@ -90,9 +90,43 @@ ros2 launch l3xz control.py
 **Note**: MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn).
 
 #### Cyphal Configuration
-| Cyphal Node | ID |
-|-|:-:|
-| [Leg Controller](https://github.com/107-systems/l3xz-leg-ctrl-firmware) | 1-6 |
-| [Auxiliary Controller](https://github.com/107-systems/l3xz-aux-ctrl-firmware) | 20 |
-| [Radiation Sensor](https://github.com/107-systems/l3xz-radiation-sensor-firmware) | 21 |
-| [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf) | 10 |
+##### [`l3xz-leg-ctrl-firmware`](https://github.com/107-systems/l3xz-leg-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type  | Description                           |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:-----:|---------------------------------------|
+|  1001U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   11    |  Pub  | Left/Front   Femur Angle Actual / rad |
+|  1002U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   11    |  Pub  | Left/Front   Tibia Angle Actual / rad |
+|  1003U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   11    |  Pub  | Left/Front   Tibia Tip Switch         |
+|  1004U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   12    |  Pub  | Left/Middle  Femur Angle Actual / rad |
+|  1005U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   12    |  Pub  | Left/Middle  Tibia Angle Actual / rad |
+|  1006U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   12    |  Pub  | Left/Middle  Tibia Tip Switch         |
+|  1007U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   13    |  Pub  | Left/Back    Femur Angle Actual / rad |
+|  1008U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   13    |  Pub  | Left/Back    Tibia Angle Actual / rad |
+|  1009U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   13    |  Pub  | Left/Back    Tibia Tip Switch         |
+|  1010U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   14    |  Pub  | Right/Back   Femur Angle Actual / rad |
+|  1011U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   14    |  Pub  | Right/Back   Tibia Angle Actual / rad |
+|  1012U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   14    |  Pub  | Right/Back   Tibia Tip Switch         |
+|  1013U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   15    |  Pub  | Right/Middle Femur Angle Actual / rad |
+|  1014U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   15    |  Pub  | Right/Middle Tibia Angle Actual / rad |
+|  1015U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   15    |  Pub  | Right/Middle Tibia Tip Switch         |
+|  1016U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   16    |  Pub  | Right/Front  Femur Angle Actual / rad |
+|  1017U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   16    |  Pub  | Right/Front  Tibia Angle Actual / rad |
+|  1018U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   15    |  Pub  | Right/Front  Tibia Tip Switch         |
+
+##### [`l3xz-aux-ctrl-firmware`](https://github.com/107-systems/l3xz-aux-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description    |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|----------------|
+|  2001U  |                  `uavcan::primitive::scalar::Bit_1_0`                  |   20    | Pub  | Emergency Stop |
+|  2002U  |               `uavcan::primitive::scalar::Integer8_1_0`                |   20    | Sub  | Light Mode     |
+
+##### [`l3xz-radiation-sensor-firmware`](https://github.com/107-systems/l3xz-radiation-sensor-firmware)
+| Port ID |   [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type    | Node ID | Type | Description          |
+|:-------:|:---------------------------------------------------------------------------:|:-------:|:----:|----------------------|
+|  3001U  |         `uavcan::primitive::scalar::Natural16_1_0`                          |   30    | Pub  | Radiation Tick Count |
+
+##### [`l3xz-valve-ctrl-firmware`](https://github.com/107-systems/l3xz-valve-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description            |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|------------------------|
+|  4001U  |             `uavcan::primitive::array::Natural16_1_0`                  |   40    | Sub  | Servo Pulse Width / us |
+
+##### [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf)
+Node ID: 50
