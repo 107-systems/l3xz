@@ -87,35 +87,46 @@ ros2 launch l3xz control.py
 | MikroTik "Robot" | 192.168.88.1 (Bridge-IP) | (bridge, nv2, pre-shared-key, l...) |
 | Robot Rasperry Pi (Ethernet) | 192.168.88.5 | |
 | Control PC (Ethernet) | 192.168.88.3 | |
+**Note**: MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn).
 
 #### Cyphal Configuration
-| Cyphal Node | ID |
-|-|:-:|
-| [Leg Controller](https://github.com/107-systems/l3xz-leg-ctrl-firmware) | 1-6 |
-| [Auxiliary Controller](https://github.com/107-systems/l3xz-aux-ctrl-firmware) | 20 |
-| [Radiation Sensor](https://github.com/107-systems/l3xz-radiation-sensor-firmware) | 21 |
-| [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf) | 10 |
+##### [`l3xz-leg-ctrl-firmware`](https://github.com/107-systems/l3xz-leg-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type  | Description                           |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:-----:|---------------------------------------|
+|  1001U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   11    |  Pub  | Left/Front   Femur Angle Actual / rad |
+|  1002U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   11    |  Pub  | Left/Front   Tibia Angle Actual / rad |
+|  1003U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   11    |  Pub  | Left/Front   Tibia Tip Switch         |
+|  1004U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   12    |  Pub  | Left/Middle  Femur Angle Actual / rad |
+|  1005U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   12    |  Pub  | Left/Middle  Tibia Angle Actual / rad |
+|  1006U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   12    |  Pub  | Left/Middle  Tibia Tip Switch         |
+|  1007U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   13    |  Pub  | Left/Back    Femur Angle Actual / rad |
+|  1008U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   13    |  Pub  | Left/Back    Tibia Angle Actual / rad |
+|  1009U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   13    |  Pub  | Left/Back    Tibia Tip Switch         |
+|  1010U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   14    |  Pub  | Right/Back   Femur Angle Actual / rad |
+|  1011U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   14    |  Pub  | Right/Back   Tibia Angle Actual / rad |
+|  1012U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   14    |  Pub  | Right/Back   Tibia Tip Switch         |
+|  1013U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   15    |  Pub  | Right/Middle Femur Angle Actual / rad |
+|  1014U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   15    |  Pub  | Right/Middle Tibia Angle Actual / rad |
+|  1015U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   15    |  Pub  | Right/Middle Tibia Tip Switch         |
+|  1016U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   16    |  Pub  | Right/Front  Femur Angle Actual / rad |
+|  1017U  |                 `uavcan::si::unit::angle::Scalar_1_0`                  |   16    |  Pub  | Right/Front  Tibia Angle Actual / rad |
+|  1018U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   15    |  Pub  | Right/Front  Tibia Tip Switch         |
 
+##### [`l3xz-aux-ctrl-firmware`](https://github.com/107-systems/l3xz-aux-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description    |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|----------------|
+|  2001U  |                  `uavcan::primitive::scalar::Bit_1_0`                  |   20    | Pub  | Emergency Stop |
+|  2002U  |               `uavcan::primitive::scalar::Integer8_1_0`                |   20    | Sub  | Light Mode     |
 
-### Components
-#### Actuators
-- 6 x [Dynamixel MX-28AR](https://emanual.robotis.com/docs/en/dxl/mx/mx-28-2/) servo (RS485, for hip (coxa) rotation)
-- 12 x [Leimbach 0H1650A Hydraulic Zylinder](http://leimbach-modellbau.de/Produkte/Hydraulik/Zylinder/0H16xxxA/) (femur and tibia)
-- 1 x [Lynxmotion SSC-32](http://www.lynxmotion.com/p-1032-ssc-32u-usb-servo-controller.aspx): servo controller for hydraulic valves.
-- 12 x [Leimbach 0H1650A Hydraulic Zylinder](http://leimbach-modellbau.de/Produkte/Hydraulik/Zylinder/0H16xxxA/) (femur and tibia)
-- 2 x [Leimbach 0H506A Standard Hydraulik-Ventile 6-fach](http://leimbach-modellbau.de/Produkte/Hydraulik/Ventile/0H50x/) 
-- 12 x [Leimbach 0H518F Servo FUTABA s3107 ( für Steuerventil )](http://leimbach-modellbau.de/Produkte/Elektronik/0H518F/) 
-- 1 x [Leimbach 0H108A Doppelpumpeneinheit M4](http://leimbach-modellbau.de/Produkte/Hydraulik/Pumpen/0H108(A)/) 
+##### [`l3xz-radiation-sensor-firmware`](https://github.com/107-systems/l3xz-radiation-sensor-firmware)
+| Port ID |   [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type    | Node ID | Type | Description          |
+|:-------:|:---------------------------------------------------------------------------:|:-------:|:----:|----------------------|
+|  3001U  |         `uavcan::primitive::scalar::Natural16_1_0`                          |   30    | Pub  | Radiation Tick Count |
 
-#### Sensors
-  - 1 x [OpenMV Cam H7 R2](https://openmv.io/collections/cams/products/openmv-cam-h7-r2): Vision
-  - 1 x [OpenMV Cam H7 R2](https://openmv.io/collections/cams/products/openmv-cam-h7-r2) + [FLIR Lepton Adapter Module](https://openmv.io/collections/cams/products/flir-lepton-adapter-module) + [FLIR Lepton](https://store.groupgets.com/products/flir-lepton-3-5): Thermal Vision
-  - 1 x [Scanse Sweep](https://github.com/scanse/sweep-sdk): 360 ° LIDAR (SLAM/Mapping)
-  - 12 x [AS5048A](https://ams.com/en/as5048a): 14-Bit rotary angle sensor for detecting position of femur/tibia
-  - radiation sensor
-  - 6 x [LAS4GQH-11/S](https://www.conrad.de/de/p/tru-components-las4gqh-11-s-drucktaster-220-v-dc-0-50-a-1-x-aus-ein-tastend-1-st-1661900.html): mechanical bumper switch at the foot endpoint to determine if the leg has ground contact
-  - 1 x [Zubax Babel](https://zubax.com/products/babel): USB to CAN adapter, for UAVCAN communication
-  - 1 x [Intel Realsense](https://www.intelrealsense.com/depth-camera-d435i) D435i
+##### [`l3xz-valve-ctrl-firmware`](https://github.com/107-systems/l3xz-valve-ctrl-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description            |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|------------------------|
+|  4001U  |             `uavcan::primitive::array::Natural16_1_0`                  |   40    | Sub  | Servo Pulse Width / us |
 
-#### Networking
-  - 2 x MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn)
+##### [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf)
+Node ID: 50
