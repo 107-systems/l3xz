@@ -28,3 +28,6 @@
 '30': {}
 '40':
   cyphal.sub.pulse_width.id: 4001
+'50':
+  uavcan.sub.readiness.id: 5001
+  uavcan.sub.setpoint.id: 5002
