@@ -1,0 +1,30 @@
+'11':
+  cyphal.pub.AS5048_A.id: 1001
+  cyphal.pub.AS5048_B.id: 1002
+  cyphal.pub.bumper.id: 1003
+'12':
+  cyphal.pub.AS5048_A.id: 1004
+  cyphal.pub.AS5048_B.id: 1005
+  cyphal.pub.bumper.id: 1006
+'13':
+  cyphal.pub.AS5048_A.id: 1007
+  cyphal.pub.AS5048_B.id: 1008
+  cyphal.pub.bumper.id: 1009
+'14':
+  cyphal.pub.AS5048_A.id: 1010
+  cyphal.pub.AS5048_B.id: 1011
+  cyphal.pub.bumper.id: 1012
+'15':
+  cyphal.pub.AS5048_A.id: 1013
+  cyphal.pub.AS5048_B.id: 1014
+  cyphal.pub.bumper.id: 1015
+'16':
+  cyphal.pub.AS5048_A.id: 1016
+  cyphal.pub.AS5048_B.id: 1017
+  cyphal.pub.bumper.id: 1018
+'20':
+  cyphal.pub.estop.id: 2001
+  cyphal.sub.light_mode.id: 2002
+'30': {}
+'40':
+  cyphal.sub.pulse_width.id: 4001

@@ -90,6 +90,38 @@ ros2 launch l3xz control.py
 **Note**: MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn).
 
 #### Cyphal Configuration
+##### How-to-config via `yakut`
+Configure `can0`:
+```bash
+sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-id/usb-Zubax_Robotics_Zubax_Babel_*-if00
+```
+Configure `yakut`:
+```bash
+python3 -m pip install yakut
+yakut compile https://github.com/OpenCyphal/public_regulated_data_types/archive/refs/heads/master.zip
+. setup_yakut.sh
+```
+Dump all write-able registers into l3xz-cyphal-config.yaml
+```bash
+y rl 11,12,13,14,15,16,20,30,40 | y --yaml rb --only=mp > config/cyphal-config.yaml
+```
+Format the YAML file for better human readability via [yamlfmt](https://github.com/google/yamlfmt):
+```bash
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+export PATH=${PATH}:`go env GOPATH`/bin
+
+yamlfmt -conf config/.yamlfmt config/cyphal-config.yaml
+```
+Edit to file for your desired network configuration and write back:
+```bash
+y rb --file=config/cyphal-config.yaml
+```
+Store configuration into persistent storage and restart.
+```bash
+y cmd 11,12,13,14,15,16,20,30,40 store
+y cmd 11,12,13,14,15,16,20,30,40 restart
+```
+
 ##### [`l3xz-leg-ctrl-firmware`](https://github.com/107-systems/l3xz-leg-ctrl-firmware)
 | Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type  | Description                           |
 |:-------:|:----------------------------------------------------------------------:|:-------:|:-----:|---------------------------------------|
