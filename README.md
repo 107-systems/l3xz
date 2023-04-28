@@ -58,7 +58,6 @@ ros2 launch l3xz control.py
 * [ros2_dynamixel_bridge](https://github.com/107-systems/ros2_dynamixel_bridge): Interface between [ROS2](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s Robotis Dynamixel servos.
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
-* [l3xz_sweep_scanner](https://github.com/107-systems/l3xz_sweep_scanner): ROS driver for Scanse Sweep 360° 2D LIDAR.
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 * [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware)).
@@ -78,6 +77,8 @@ ros2 launch l3xz control.py
 * **ROS**: [l3xz_openmv_camera](https://github.com/107-systems/l3xz_openmv_camera): ROS driver for [OpenMV](https://openmv.io/) camera.
 * **CAD**: [l3xz-hw-pan-tilt-head](https://github.com/107-systems/l3xz-hw-pan-tilt-head): CAD files for L3X-Z's pan/tilt color/thermal imaging head.
 * **Docker**: [l3xz-sw-pan-tilt-head](https://github.com/107-systems/l3xz-sw-pan-tilt-head): Software bundle for deployment on the Raspberry Pi Zero 2 of the [pan/tilt head](https://github.com/107-systems/l3xz-hw-pan-tilt-head).
+##### Deprecated
+* [l3xz_sweep_scanner](https://github.com/107-systems/l3xz_sweep_scanner): ROS driver for Scanse Sweep 360° 2D LIDAR. **Sensor no longer used in L3X-Z.**
 
 ### Configuration
 #### Network Configuration
