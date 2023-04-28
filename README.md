@@ -101,16 +101,14 @@ python3 -m pip install yakut
 yakut compile https://github.com/OpenCyphal/public_regulated_data_types/archive/refs/heads/master.zip
 . setup_yakut.sh
 ```
-Dump all write-able registers into l3xz-cyphal-config.yaml
+Dump all write-able registers into `cyphal-config-raw.yaml`:
 ```bash
-y rl 11,12,13,14,15,16,20,30,40,50 | y --yaml rb --only=mp > config/cyphal-config.yaml
+y rl 11,12,13,14,15,16,20,30,40,50 | y --yaml rb --only=mp > config/cyphal-config-raw.yaml
 ```
-Format the YAML file for better human readability via [yamlfmt](https://github.com/google/yamlfmt):
+Format the YAML file for better human readability via [pyyaml](https://pypi.org/project/PyYAML):
 ```bash
-go install github.com/google/yamlfmt/cmd/yamlfmt@latest
-export PATH=${PATH}:`go env GOPATH`/bin
-
-yamlfmt -conf config/.yamlfmt config/cyphal-config.yaml
+pip install pyyaml
+python -c "import sys,yaml;yaml.dump_all(yaml.load_all(sys.stdin, yaml.Loader), sys.stdout)" < config/cyphal-config-raw.yaml | tee config/cyphal-config.yaml
 ```
 Edit to file for your desired network configuration and write back:
 ```bash
