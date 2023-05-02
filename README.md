@@ -91,15 +91,15 @@ ros2 launch l3xz control.py
 
 #### Cyphal Configuration
 ##### How-to-config via `yakut`
+Configure `can0`:
+```bash
+sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-id/usb-Zubax_Robotics_Zubax_Babel_*-if00
+```
 Clone [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) repository:
 ```bash
 git clone https://github.com/OpenCyphal/public_regulated_data_types
 cd public_regulated_data_types
 export CYPHAL_PATH=$(pwd)
-```
-Configure `can0`:
-```bash
-sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-id/usb-Zubax_Robotics_Zubax_Babel_*-if00
 ```
 Configure `yakut`:
 ```bash
