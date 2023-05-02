@@ -91,6 +91,12 @@ ros2 launch l3xz control.py
 
 #### Cyphal Configuration
 ##### How-to-config via `yakut`
+Clone [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) repository:
+```bash
+git clone https://github.com/OpenCyphal/public_regulated_data_types
+cd public_regulated_data_types
+export CYPHAL_PATH=$(pwd)
+```
 Configure `can0`:
 ```bash
 sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-id/usb-Zubax_Robotics_Zubax_Babel_*-if00
@@ -98,7 +104,6 @@ sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-
 Configure `yakut`:
 ```bash
 python3 -m pip install yakut
-yakut compile https://github.com/OpenCyphal/public_regulated_data_types/archive/refs/heads/master.zip
 . setup_yakut.sh
 ```
 Dump all write-able registers into `cyphal-config-raw.yaml`:
