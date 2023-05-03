@@ -91,6 +91,30 @@ ros2 launch l3xz control.py
 **Note**: MikroTik [RBMetal5SHPn](https://mikrotik.com/product/RBMetal5SHPn).
 
 #### Cyphal Configuration
+##### How-to-config via `yakut`
+[Install](https://github.com/OpenCyphal/yakut) and configure `yakut`:
+```bash
+. setup_yakut.sh
+```
+Dump all write-able registers into `cyphal-config-raw.yaml`:
+```bash
+y rl 11,12,13,14,15,16,20,30,40,50 | y --yaml rb --only=mp > config/cyphal-config-raw.yaml
+```
+Format the YAML file for better human readability via [pyyaml](https://pypi.org/project/PyYAML):
+```bash
+pip install pyyaml
+python -c "import sys,yaml;yaml.dump_all(yaml.load_all(sys.stdin, yaml.Loader), sys.stdout)" < config/cyphal-config-raw.yaml | tee config/cyphal-config.yaml
+```
+Edit to file for your desired network configuration and write back:
+```bash
+y rb --file=config/cyphal-config.yaml
+```
+Store configuration into persistent storage and restart.
+```bash
+y cmd 11,12,13,14,15,16,20,30,40,50 store
+y cmd 11,12,13,14,15,16,20,30,40,50 restart
+```
+
 ##### [`l3xz-leg-ctrl-firmware`](https://github.com/107-systems/l3xz-leg-ctrl-firmware)
 | Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type  | Description                           |
 |:-------:|:----------------------------------------------------------------------:|:-------:|:-----:|---------------------------------------|
@@ -130,4 +154,7 @@ ros2 launch l3xz control.py
 |  4001U  |             `uavcan::primitive::array::Natural16_1_0`                  |   40    | Sub  | Servo Pulse Width / us |
 
 ##### [Zubax Robotics Orel 20](https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf)
-Node ID: 50
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description  |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|--------------|
+|  5001U  |              `reg::udral::service::common::Readiness_0_1`              |   50    | Sub  | Readiness    |
+|  5002U  |        `reg::udral::service::actuator::common::sp::Scalar_0_1`         |   50    | Sub  | RPM Setpoint |
