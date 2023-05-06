@@ -51,13 +51,13 @@ ros2 launch l3xz control.py
 * [l3xz_joy](https://github.com/107-systems/l3xz_joy): ROS PS3 joystick driver for feeding `l3xz_teleop` node.
 * [l3xz_teleop](https://github.com/107-systems/l3xz_teleop): Teleoperation for L3X-Z via PS3 joystick and ROS topics.
 * [l3xz_mapping](https://github.com/107-systems/l3xz_mapping): L3X-Z mapping stack.
-* [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
-* [l3xz_frontend_base](https://github.com/107-systems/l3xz_frontend_base): Fundamental functionalities for frontends using roslibjs.
 ##### Robot Software
 * [ros2_cyphal_bridge](https://github.com/107-systems/ros2_cyphal_bridge): Interface between [ROS](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s [Cyphal](https://opencyphal.org) connected components.
 * [ros2_dynamixel_bridge](https://github.com/107-systems/ros2_dynamixel_bridge): Interface between [ROS2](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s Robotis Dynamixel servos.
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
+* [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
+* [l3xz_frontend_base](https://github.com/107-systems/l3xz_frontend_base): Fundamental functionalities for frontends using roslibjs.
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 * [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware)).
