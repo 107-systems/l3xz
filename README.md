@@ -57,6 +57,7 @@ ros2 launch l3xz control.py
 * [ros2_dynamixel_bridge](https://github.com/107-systems/ros2_dynamixel_bridge): Interface between [ROS2](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s Robotis Dynamixel servos.
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
+* [l3xz_hydraulic_ctrl](https://github.com/107-systems/l3xz_hydraulic_ctrl): Hydraulic controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
 * [l3xz_frontend_base](https://github.com/107-systems/l3xz_frontend_base): Fundamental functionalities for frontends using roslibjs.
 ##### Firmware
