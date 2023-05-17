@@ -9,7 +9,7 @@ else
     echo "CYPHAL_PATH = \"$CYPHAL_PATH\""
 fi
 
-if ! [ -e /sys/class/net/slcan0 ]; then
+if ! [ -e /sys/class/net/can0 ]; then
     sudo ./setup_slcan.sh --remove-all --basename can --speed-code 5 /dev/serial/by-id/usb-Zubax*Babel*
 fi
 export UAVCAN__CAN__IFACE='socketcan:can0'
