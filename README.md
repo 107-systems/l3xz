@@ -64,6 +64,7 @@ ros2 launch l3xz control.py
 * [l3xz-leg-ctrl-firmware](https://github.com/107-systems/l3xz-leg-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) leg controller ([l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware)).
 * [l3xz-radiation-sensor-firmware](https://github.com/107-systems/l3xz-radiation-sensor-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) radiation sensor ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 * [l3xz-valve-ctrl-firmware](https://github.com/107-systems/l3xz-valve-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) radiation sensor ([OpenCyphalServoController12](https://github.com/generationmake/OpenCyphalServoController12)).
+* [l3xz-pressure-sensor-firmware](https://github.com/107-systems/l3xz-pressure-sensor-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) pressure sensor ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
 ##### Hardware
 * [l3xz-leg-ctrl-hardware](https://github.com/107-systems/l3xz-leg-ctrl-hardware): L3X-Z Hexapod leg controller hardware design files.
 * [RS485-Power-Injector](https://github.com/107-systems/RS485-Power-Injector): Provide battery power to RS485 devices.
@@ -94,7 +95,7 @@ ros2 launch l3xz control.py
 ```
 Dump all write-able registers into `cyphal-config-raw.yaml`:
 ```bash
-y rl 11,12,13,14,15,16,20,30,40,50 | y --yaml rb --only=mp > config/cyphal-config-raw.yaml
+y rl 11,12,13,14,15,16,20,30,40,50,60 | y --yaml rb --only=mp > config/cyphal-config-raw.yaml
 ```
 Format the YAML file for better human readability via [pyyaml](https://pypi.org/project/PyYAML):
 ```bash
@@ -107,8 +108,8 @@ y rb --file=config/cyphal-config.yaml
 ```
 Store configuration into persistent storage and restart.
 ```bash
-y cmd 11,12,13,14,15,16,20,30,40,50 store
-y cmd 11,12,13,14,15,16,20,30,40,50 restart
+y cmd 11,12,13,14,15,16,20,30,40,50,60 store
+y cmd 11,12,13,14,15,16,20,30,40,50,60 restart
 ```
 
 ##### [`l3xz-leg-ctrl-firmware`](https://github.com/107-systems/l3xz-leg-ctrl-firmware)
@@ -138,8 +139,6 @@ y cmd 11,12,13,14,15,16,20,30,40,50 restart
 |:-------:|:----------------------------------------------------------------------:|:-------:|:----:|-------------------------------|
 |  2001U  |                  `uavcan::primitive::scalar::Bit_1_0`                  |   20    | Pub  | Emergency Stop                |
 |  2002U  |               `uavcan::primitive::scalar::Integer8_1_0`                |   20    | Sub  | Light Mode                    |
-|  2003U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   20    | Pub  | Hydraulic Circuit #0 Pressure |
-|  2004U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   20    | Pub  | Hydraulic Circuit #1 Pressure |
 
 ##### [`l3xz-radiation-sensor-firmware`](https://github.com/107-systems/l3xz-radiation-sensor-firmware)
 | Port ID |   [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type    | Node ID | Type | Description          |
@@ -156,3 +155,9 @@ y cmd 11,12,13,14,15,16,20,30,40,50 restart
 |:-------:|:----------------------------------------------------------------------:|:-------:|:----:|--------------|
 |  5001U  |              `reg::udral::service::common::Readiness_0_1`              |   50    | Sub  | Readiness    |
 |  5002U  |        `reg::udral::service::actuator::common::sp::Scalar_0_1`         |   50    | Sub  | RPM Setpoint |
+
+##### [`l3xz-pressure-sensor-firmware`](https://github.com/107-systems/l3xz-pressure-sensor-firmware)
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description                   |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|-------------------------------|
+|  6001U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   60    | Pub  | Hydraulic Circuit #0 Pressure |
+|  6002U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   60    | Pub  | Hydraulic Circuit #1 Pressure |
