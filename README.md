@@ -134,10 +134,12 @@ y cmd 11,12,13,14,15,16,20,30,40,50 restart
 |  1018U  |                 `uavcan::primitive::scalar::Bit_1_0`                   |   15    |  Pub  | Right/Front  Tibia Tip Switch         |
 
 ##### [`l3xz-aux-ctrl-firmware`](https://github.com/107-systems/l3xz-aux-ctrl-firmware)
-| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description    |
-|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|----------------|
-|  2001U  |                  `uavcan::primitive::scalar::Bit_1_0`                  |   20    | Pub  | Emergency Stop |
-|  2002U  |               `uavcan::primitive::scalar::Integer8_1_0`                |   20    | Sub  | Light Mode     |
+| Port ID | [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type | Node ID | Type | Description                   |
+|:-------:|:----------------------------------------------------------------------:|:-------:|:----:|-------------------------------|
+|  2001U  |                  `uavcan::primitive::scalar::Bit_1_0`                  |   20    | Pub  | Emergency Stop                |
+|  2002U  |               `uavcan::primitive::scalar::Integer8_1_0`                |   20    | Sub  | Light Mode                    |
+|  2003U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   20    | Pub  | Hydraulic Circuit #0 Pressure |
+|  2004U  |                `uavcan::si::unit::pressure::Scalar_1_0`                |   20    | Pub  | Hydraulic Circuit #1 Pressure |
 
 ##### [`l3xz-radiation-sensor-firmware`](https://github.com/107-systems/l3xz-radiation-sensor-firmware)
 | Port ID |   [DSDL](https://github.com/OpenCyphal/public_regulated_data_types) Type    | Node ID | Type | Description          |
