@@ -25,11 +25,12 @@
 20:
   cyphal.pub.estop.id: 2001
   cyphal.sub.light_mode.id: 2002
-  cyphal.pub.pressure_0.id: 2003
-  cyphal.pub.pressure_1.id: 2004
 30: {}
 40:
   cyphal.sub.pulse_width.id: 4001
 50:
   uavcan.sub.readiness.id: 5001
   uavcan.sub.setpoint.id: 5002
+60:
+  cyphal.pub.pressure_0.id: 6001
+  cyphal.pub.pressure_1.id: 6002
