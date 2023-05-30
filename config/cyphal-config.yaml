@@ -25,6 +25,8 @@
 20:
   cyphal.pub.estop.id: 2001
   cyphal.sub.light_mode.id: 2002
+  cyphal.pub.pressure_0.id: 2003
+  cyphal.pub.pressure_1.id: 2004
 30: {}
 40:
   cyphal.sub.pulse_width.id: 4001
