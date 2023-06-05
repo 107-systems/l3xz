@@ -10,11 +10,11 @@ def generate_launch_description():
     l3xz_head_ctrl_launch_dir = get_package_share_directory('l3xz_head_ctrl')  + '/launch/head_ctrl.py'
     l3xz_head_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_head_ctrl_launch_dir))
 
-    l3xz_gait_ctrl_launch_dir = get_package_share_directory('l3xz_gait_ctrl')  + '/launch/gait_ctrl.py'
-    l3xz_gait_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_gait_ctrl_launch_dir))
+#    l3xz_gait_ctrl_launch_dir = get_package_share_directory('l3xz_gait_ctrl')  + '/launch/gait_ctrl.py'
+#    l3xz_gait_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_gait_ctrl_launch_dir))
 
     return LaunchDescription([
         ros2_dynamixel_bridge,
         l3xz_head_ctrl,
-        l3xz_gait_ctrl
+#        l3xz_gait_ctrl
     ])
