@@ -7,6 +7,9 @@ def generate_launch_description():
     ros2_dynamixel_bridge_launch_dir = get_package_share_directory('ros2_dynamixel_bridge') + '/launch/bridge-l3xz.py'
     ros2_dynamixel_bridge = IncludeLaunchDescription(PythonLaunchDescriptionSource(ros2_dynamixel_bridge_launch_dir))
 
+    ros2_cyphal_bridge_launch_dir = get_package_share_directory('ros2_cyphal_bridge') + '/launch/bridge.py'
+    ros2_cyphal_bridge = IncludeLaunchDescription(PythonLaunchDescriptionSource(ros2_dynamixel_bridge_launch_dir))
+
     l3xz_head_ctrl_launch_dir = get_package_share_directory('l3xz_head_ctrl')  + '/launch/head_ctrl.py'
     l3xz_head_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_head_ctrl_launch_dir))
 
@@ -15,6 +18,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         ros2_dynamixel_bridge,
-        l3xz_head_ctrl,
+        ros2_cyphal_bridge,
+        l3xz_head_ctrl
 #        l3xz_gait_ctrl
     ])
