@@ -58,6 +58,7 @@ ros2 launch l3xz control.py
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_head_ctrl](https://github.com/107-systems/l3xz_head_ctrl): Head controller for the L3X-Z electric/hydraulic hexapod robot.
 * [l3xz_hydraulic_ctrl](https://github.com/107-systems/l3xz_hydraulic_ctrl): Hydraulic controller for the L3X-Z electric/hydraulic hexapod robot.
+* [l3xz_valve_ctrl](https://github.com/107-systems/l3xz_valve_ctrl): ROS package for controlling L3X-Z's valve block.
 * [l3xz_frontend](https://github.com/107-systems/l3xz_frontend): Web based frontend for L3X-Z.
 ##### Firmware
 * [l3xz-aux-ctrl-firmware](https://github.com/107-systems/l3xz-aux-ctrl-firmware): Firmware for the [L3X-Z](https://github.com/107-systems/l3xz) auxiliary controller ([OpenCyphalPicoBase](https://github.com/generationmake/OpenCyphalPicoBase)).
