@@ -10,8 +10,8 @@ def generate_launch_description():
     ros2_cyphal_bridge_launch_dir = get_package_share_directory('ros2_cyphal_bridge') + '/launch/bridge.py'
     ros2_cyphal_bridge = IncludeLaunchDescription(PythonLaunchDescriptionSource(ros2_cyphal_bridge_launch_dir))
 
-    l3xz_hydraulic_ctrl_launch_dir = get_package_share_directory('l3xz_hydraulic_ctrl')  + '/launch/hydraulic_ctrl.py'
-    l3xz_hydraulic_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_hydraulic_ctrl_launch_dir))
+    l3xz_pump_ctrl_launch_dir = get_package_share_directory('l3xz_pump_ctrl')  + '/launch/pump_ctrl.py'
+    l3xz_pump_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_pump_ctrl_launch_dir))
 
     l3xz_valve_ctrl_launch_dir = get_package_share_directory('l3xz_valve_ctrl')  + '/launch/valve_ctrl.py'
     l3xz_valve_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_valve_ctrl_launch_dir))
@@ -28,7 +28,7 @@ def generate_launch_description():
     return LaunchDescription([
         ros2_dynamixel_bridge,
         ros2_cyphal_bridge,
-        l3xz_hydraulic_ctrl,
+        l3xz_pump_ctrl,
         l3xz_valve_ctrl,
         l3xz_watchdog,
         l3xz_head_ctrl,
