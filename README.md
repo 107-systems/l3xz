@@ -88,6 +88,21 @@ ros2 launch l3xz control.py
 | L3X-Z Raspberry Pi 4 (WiFi)     |  192.168.88.6  |
 | L01S Robot                      | 192.168.88.101 |
 | L01S Control                    | 192.168.88.102 |
+* Edit `/etc/network/interfaces`:
+```bash
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
+```
+* Edit `/etc/wpa_supplicant/wpa_supplicant.conf`:
+```bash
+network={
+   ssid="ENRICH-SSID"
+   psk="ENRICH-PASS"
+   key_mgmt=WPA-PSK
+}
+```
 
 #### Network Configuration ELROB 22
 | Component | IP | Notes |
