@@ -103,6 +103,22 @@ network={
    key_mgmt=WPA-PSK
 }
 ```
+* Check this [script](https://gist.github.com/carry0987/372b9fefdd8041d0374f4e08fbf052b1) for keeping WiFi connected:
+```bash
+#!/bin/bash
+
+SSID=$(/sbin/iwgetid --raw)
+
+if [ -z "$SSID" ]
+then
+    echo "`date -Is` WiFi interface is down, trying to reconnect" >> /home/pi/wifi-log.txt
+    sudo ifconfig wlan0 down
+    sleep 30
+    sudo ifconfig wlan0 up
+fi
+
+echo "WiFi check finished"
+```
 
 #### Network Configuration ELROB 22
 | Component | IP | Notes |
