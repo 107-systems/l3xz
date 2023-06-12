@@ -79,7 +79,14 @@ ros2 launch l3xz control.py
 * **Docker**: [l3xz-sw-pan-tilt-head](https://github.com/107-systems/l3xz-sw-pan-tilt-head): Software bundle for deployment on the Raspberry Pi Zero 2 of the [pan/tilt head](https://github.com/107-systems/l3xz-hw-pan-tilt-head).
 
 ### Configuration
-#### Network Configuration
+#### Network Configuration ENRICH 23
+| Component            |      IP      |
+|----------------------|:------------:|
+| L3X-Z Raspberry Pi 4 | 192.168.88.5 |
+| L3X-Z Pan/Tilt Head  | 192.168.88.4 |
+| L3X-Z Control PC     | 192.168.88.3 |
+
+#### Network Configuration ELROB 22
 | Component | IP | Notes |
 |-|:-:|-|
 | MikroTik "Base Station" | 192.168.88.2 (Bridge-IP) | (station bridge, nv2, pre-shared-key, l...) |
