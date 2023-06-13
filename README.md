@@ -91,18 +91,11 @@ ros2 launch l3xz control.py
 | L01S Control                    | 192.168.88.102 |
 * Edit `/etc/network/interfaces`:
 ```bash
+auto wlan0
 allow-hotplug wlan0
-iface wlan0 inet manual
-wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
-iface default inet dhcp
-```
-* Edit `/etc/wpa_supplicant/wpa_supplicant.conf`:
-```bash
-network={
-   ssid="ENRICH-SSID"
-   psk="ENRICH-PASS"
-   key_mgmt=WPA-PSK
-}
+iface wlan0 inet static
+address 192.168.88.6
+netmask 255.255.255.0
 ```
 * Check this [script](https://gist.github.com/carry0987/372b9fefdd8041d0374f4e08fbf052b1) for keeping WiFi connected:
 ```bash
