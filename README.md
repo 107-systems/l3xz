@@ -79,7 +79,48 @@ ros2 launch l3xz control.py
 * **Docker**: [l3xz-sw-pan-tilt-head](https://github.com/107-systems/l3xz-sw-pan-tilt-head): Software bundle for deployment on the Raspberry Pi Zero 2 of the [pan/tilt head](https://github.com/107-systems/l3xz-hw-pan-tilt-head).
 
 ### Configuration
-#### Network Configuration
+#### Network Configuration ENRICH 23
+| Component                       |       IP       |
+|---------------------------------|:--------------:|
+| L3X-Z Control PC                |  192.168.88.3  |
+| L3X-Z Pan/Tilt Head             |  192.168.88.4  |
+| L3X-Z Raspberry Pi 4 (Ethernet) |  192.168.88.5  |
+| L3X-Z Raspberry Pi 4 (WiFi)     |  192.168.88.6  |
+| L01S Robot                      | 192.168.88.101 |
+| L01S Control                    | 192.168.88.102 |
+* Edit `/etc/network/interfaces`:
+```bash
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
+```
+* Edit `/etc/wpa_supplicant/wpa_supplicant.conf`:
+```bash
+network={
+   ssid="ENRICH-SSID"
+   psk="ENRICH-PASS"
+   key_mgmt=WPA-PSK
+}
+```
+* Check this [script](https://gist.github.com/carry0987/372b9fefdd8041d0374f4e08fbf052b1) for keeping WiFi connected:
+```bash
+#!/bin/bash
+
+SSID=$(/sbin/iwgetid --raw)
+
+if [ -z "$SSID" ]
+then
+    echo "`date -Is` WiFi interface is down, trying to reconnect" >> /home/pi/wifi-log.txt
+    sudo ifconfig wlan0 down
+    sleep 30
+    sudo ifconfig wlan0 up
+fi
+
+echo "WiFi check finished"
+```
+
+#### Network Configuration ELROB 22
 | Component | IP | Notes |
 |-|:-:|-|
 | MikroTik "Base Station" | 192.168.88.2 (Bridge-IP) | (station bridge, nv2, pre-shared-key, l...) |
