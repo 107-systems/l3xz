@@ -82,10 +82,11 @@ ros2 launch l3xz control.py
 #### Network Configuration ENRICH 23
 | Component                       |       IP       |
 |---------------------------------|:--------------:|
-| L3X-Z Control PC                |  192.168.88.3  |
 | L3X-Z Raspberry Pi 4 (Ethernet) |  192.168.88.4  |
 | L3X-Z Pan/Tilt Head             |  192.168.88.5  |
 | L3X-Z Raspberry Pi 4 (WiFi)     |  192.168.88.6  |
+| L3X-Z Control PC (Ethernet)     |  192.168.88.9  |
+| L3X-Z Control PC (WiFi)         |  192.168.88.10  |
 | L01S Robot                      | 192.168.88.101 |
 | L01S Control                    | 192.168.88.102 |
 * Edit `/etc/network/interfaces`:
