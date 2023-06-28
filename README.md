@@ -52,7 +52,7 @@ ros2 launch l3xz control.py
 * [l3xz_teleop](https://github.com/107-systems/l3xz_teleop): Teleoperation for L3X-Z via PS3 joystick and ROS topics.
 * [l3xz_mapping](https://github.com/107-systems/l3xz_mapping): L3X-Z mapping stack.
 ##### Robot Software
-* [l3xz_watchdog](https://github.com/107-systems/l3xz_watchdog): This packages supervises the state of all of [L3X-Z](https://github.com/107-systems/l3xz) ROS sub-systems.
+* [l3xz_system_monitor](https://github.com/107-systems/l3xz_system_monitor): This packages supervises the state of all of [L3X-Z](https://github.com/107-systems/l3xz) ROS sub-systems.
 * [ros2_cyphal_bridge](https://github.com/107-systems/ros2_cyphal_bridge): Interface between [ROS](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s [Cyphal](https://opencyphal.org) connected components.
 * [ros2_dynamixel_bridge](https://github.com/107-systems/ros2_dynamixel_bridge): Interface between [ROS2](https://github.com/ros2) and [L3X-Z](https://github.com/107-systems/l3xz)'s Robotis Dynamixel servos.
 * [l3xz_gait_ctrl](https://github.com/107-systems/l3xz_gait_ctrl): Gait controller for the L3X-Z electric/hydraulic hexapod robot.

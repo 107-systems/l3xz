@@ -16,8 +16,8 @@ def generate_launch_description():
     l3xz_valve_ctrl_launch_dir = get_package_share_directory('l3xz_valve_ctrl')  + '/launch/valve_ctrl.py'
     l3xz_valve_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_valve_ctrl_launch_dir))
 
-    l3xz_watchdog_launch_dir = get_package_share_directory('l3xz_watchdog')  + '/launch/watchdog.py'
-    l3xz_watchdog = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_watchdog_launch_dir))
+    l3xz_system_monitor_launch_dir = get_package_share_directory('l3xz_system_monitor')  + '/launch/monitor.py'
+    l3xz_system_monitor = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_system_monitor_launch_dir))
 
     l3xz_head_ctrl_launch_dir = get_package_share_directory('l3xz_head_ctrl')  + '/launch/head_ctrl.py'
     l3xz_head_ctrl = IncludeLaunchDescription(PythonLaunchDescriptionSource(l3xz_head_ctrl_launch_dir))
@@ -30,7 +30,7 @@ def generate_launch_description():
         ros2_cyphal_bridge,
         l3xz_pump_ctrl,
         l3xz_valve_ctrl,
-        l3xz_watchdog,
+        l3xz_system_monitor,
         l3xz_head_ctrl,
         l3xz_gait_ctrl
     ])
