@@ -38,7 +38,7 @@ jobs:
       run: | 
         mkdir -p ${{github.workspace}}/ros2_ws/src
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         path: 'ros2_ws/src/l3xz'
 
